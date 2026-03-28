@@ -1,0 +1,367 @@
+:root {
+  --bg-dark: #000000;
+  --text-primary: #FFFFFF;
+  --text-secondary: #9CA3AF;
+  --accent-purple: #8b5cf6;
+  --accent-dim: rgba(139, 92, 246, 0.4);
+
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-sans: 'Inter', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-dark);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 1. PRELOADER MASSIVE UI */
+#preloader {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: var(--bg-dark);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loader-massive-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  position: relative;
+}
+.loader-3d-orb {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: clamp(300px, 40vw, 600px);
+  height: auto;
+  z-index: -1;
+  mix-blend-mode: lighten;
+  opacity: 0.25; /* Very subtle background watermark */
+  animation: slowOrbSpin 40s linear infinite;
+  pointer-events: none;
+}
+@keyframes slowOrbSpin {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.loader-number-container {
+  font-family: var(--font-display);
+  font-size: clamp(5rem, 15vw, 15rem);
+  font-weight: 500;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.95); /* Solid white for absolute clarity */
+  -webkit-text-stroke: 0;
+  letter-spacing: -0.05em;
+  text-shadow: 0 0 40px rgba(139, 92, 246, 0.2);
+}
+.loader-perc-sign {
+  font-size: 0.4em;
+  color: var(--accent-purple);
+  -webkit-text-stroke: 0;
+  vertical-align: top;
+}
+.loader-progress-bar {
+  width: clamp(200px, 30vw, 300px);
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+.loader-progress-fill {
+  position: absolute;
+  top: 0; left: 0; bottom: 0;
+  width: 0%;
+  background-color: var(--accent-purple);
+  box-shadow: 0 0 10px var(--accent-purple);
+}
+.loader-status-text {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  letter-spacing: 0.4em;
+  color: var(--text-primary);
+  opacity: 0.8;
+  text-transform: uppercase;
+  min-height: 15px;
+}
+.loader-brand-text {
+  font-family: var(--font-display);
+  font-weight: 300;
+  letter-spacing: 0.4em;
+  color: rgba(255,255,255,0.4);
+  font-size: 0.75rem;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  pointer-events: none;
+  z-index: 90;
+  /* Cinematic edge vignette (classy and deep, not neon) */
+  box-shadow: inset 0 0 250px rgba(0, 0, 0, 0.95), inset 0 0 80px rgba(5, 5, 10, 0.9);
+}
+
+/* 2. TEXTURE - The Grain Overlay */
+.noise-overlay {
+  position: fixed;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  pointer-events: none;
+  z-index: 50;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* 3. THE GLOW - Ambient Mesh Behind Avatar */
+.ambient-mesh {
+  position: fixed;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 900px; height: 900px;
+  background: radial-gradient(circle closest-side, var(--accent-dim), transparent 80%);
+  filter: blur(100px);
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+/* 4. L-CORNERS (Architectural framing) */
+.corner-l {
+  position: fixed;
+  width: 20px; height: 20px;
+  border: 1px solid rgba(255,255,255,0.2);
+  z-index: 100;
+  pointer-events: none;
+}
+.corner-l.top-left { top: 30px; left: 30px; border-right: none; border-bottom: none; }
+.corner-l.top-right { top: 30px; right: 30px; border-left: none; border-bottom: none; }
+.corner-l.bottom-left { bottom: 30px; left: 30px; border-right: none; border-top: none; }
+.corner-l.bottom-right { bottom: 30px; right: 30px; border-left: none; border-top: none; }
+
+/* 5. UI Elements */
+.fixed-nav {
+  position: fixed;
+  top: 40px; left: 50px; right: 50px;
+  display: flex; justify-content: space-between; align-items: center;
+  z-index: 100; font-family: var(--font-display); font-weight: 500; letter-spacing: 0.05em; font-size: 0.9rem;
+}
+.logo { font-weight: 700; font-size: 1.1rem; letter-spacing: -0.02em; }
+.contact-center { position: absolute; left: 50%; transform: translateX(-50%); color: var(--text-secondary); font-family: var(--font-sans); font-size: 0.9rem; }
+.nav-links { display: flex; gap: 3rem; }
+.nav-links a { text-decoration: none; color: var(--text-primary); opacity: 0.8; transition: opacity 0.3s; }
+.nav-links a:hover { opacity: 1; }
+
+.sidebar-socials { position: fixed; left: 50px; top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; gap: 2rem; z-index: 100; }
+.sidebar-socials a { color: var(--text-primary); opacity: 0.6; transition: 0.3s; display: block; }
+.sidebar-socials a:hover { opacity: 1; color: var(--accent-purple); }
+
+.btn-resume { position: fixed; bottom: 40px; right: 50px; display: flex; align-items: center; gap: 12px; font-family: var(--font-display); text-decoration: none; color: var(--text-primary); font-size: 0.9rem; letter-spacing: 0.1em; z-index: 100; opacity: 0.8; transition: opacity 0.3s; }
+.btn-resume:hover { opacity: 1; }
+
+/* 6. HERO SECTION (Tuned Z-index for Avatar over Text) */
+.hero-block {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* AVATAR IN FOREGROUND OF HOLLOW TEXT */
+.hero-layer-center {
+  position: absolute;
+  left: 50%; bottom: 0;
+  transform: translateX(-50%);
+  height: 75vh;
+  z-index: 10;
+  pointer-events: none;
+}
+.the-avatar { 
+  height: 100%; 
+  width: auto; 
+  object-fit: contain; 
+  /* If the image has a solid black background, this blends it into the dark theme */
+  mix-blend-mode: lighten;
+  filter: drop-shadow(0 0 30px rgba(139, 92, 246, 0.4));
+}
+
+/* TEXT IN BACKGROUND / FOREGROUND */
+/* Left side gets priority and sits cleanly past the sidebar */
+.hero-layer-left { 
+  position: absolute; 
+  left: 12vw; 
+  top: 40%; 
+  transform: translateY(-50%); 
+  z-index: 20; 
+  text-shadow: 0 4px 20px rgba(0,0,0,0.8); /* Ensures readability if overlapping avatar */
+}
+/* Right side overlay (bumping z-index to 20 so the avatar never obscures it) */
+.hero-layer-right { 
+  position: absolute; 
+  right: 12vw; 
+  bottom: 25%; 
+  text-align: right; 
+  z-index: 20; 
+  text-shadow: 0 4px 20px rgba(0,0,0,0.8);
+}
+
+.staggered span {
+  display: block; font-family: var(--font-display); 
+  font-size: clamp(2.5rem, 4.5vw, 5.5rem); /* Tightly scaled so it fits without running into the edges */
+  font-weight: 700;
+  letter-spacing: -0.05em; line-height: 0.95; text-transform: uppercase;
+}
+.hero-small-text { font-family: var(--font-sans); color: var(--accent-purple); font-size: clamp(1rem, 2vw, 1.5rem); display: block; margin-bottom: 0.5rem; opacity: 0.9; }
+.staggered .hollow-purple { color: transparent; -webkit-text-stroke: 2px var(--accent-purple); }
+
+/* 7. "WHAT I DO" (Vertical Architect Layout) */
+.whatido-block {
+  padding: 10rem 0;
+  position: relative;
+  z-index: 20;
+}
+.whatido-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 1300px;
+  margin: 0 auto;
+  gap: 5rem;
+  padding: 0 40px;
+}
+
+/* Left Profile */
+.whatido-left {
+  position: relative;
+  height: 600px; /* Force height so absolutely positioned items fill */
+}
+.massive-vertical {
+  position: absolute;
+  left: -80px; /* Hangs off edge */
+  bottom: 0px;
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 10vw, 8rem);
+  line-height: 0.8;
+  letter-spacing: -0.06em;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2);
+  transform: rotate(-90deg);
+  transform-origin: bottom left;
+  z-index: 1;
+}
+.massive-vertical span { display: block; }
+.desk-image-wrapper {
+  position: absolute;
+  bottom: 0; right: 0;
+  width: 90%; height: 100%;
+  display: flex; justify-content: center; align-items: flex-end;
+  z-index: 2;
+}
+.desk-image { 
+  width: 100%; 
+  height: auto; 
+  border-radius: 8px;
+  mix-blend-mode: lighten; /* Removes black block artifacts over the mesh background */
+}
+
+/* Right Blueprint Cards */
+.whatido-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3rem;
+}
+
+.blueprint-card {
+  position: relative;
+  padding: 3rem;
+  border: 1px dashed rgba(255,255,255,0.15);
+  background-color: rgba(0,0,0,0.5);
+  backdrop-filter: blur(5px);
+}
+.bp-corner {
+  position: absolute;
+  width: 10px; height: 10px;
+  border: 2px solid var(--accent-purple);
+}
+.bp-corner.tl { top: -2px; left: -2px; border-right: none; border-bottom: none; }
+.bp-corner.tr { top: -2px; right: -2px; border-left: none; border-bottom: none; }
+.bp-corner.bl { bottom: -2px; left: -2px; border-right: none; border-top: none; }
+.bp-corner.br { bottom: -2px; right: -2px; border-left: none; border-top: none; }
+
+.blueprint-card h3 {
+  font-family: var(--font-display); font-size: 1.8rem; letter-spacing: -0.02em; margin-bottom: 0.5rem;
+}
+.bp-sub { font-family: var(--font-sans); color: var(--accent-purple); font-size: 0.9rem; text-transform: uppercase; margin-bottom: 2rem; letter-spacing: 0.05em; }
+.bp-desc { color: var(--text-secondary); line-height: 1.8; font-size: 1rem; opacity: 0.8; }
+
+
+/* 8. WORK GRID SECTION (Masonry Multi-column) */
+.work-grid-block { padding: 5rem 0 10rem 0; position: relative; z-index: 20; }
+.section-massive-title { font-family: var(--font-display); font-size: clamp(3rem, 6vw, 6rem); letter-spacing: -0.05em; text-align: center; margin-bottom: 6rem; }
+.section-massive-title .hollow-purple { color: transparent; -webkit-text-stroke: 2px var(--accent-purple); }
+
+.grid-container {
+  display: flex;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+.grid-col { flex: 1; display: flex; flex-direction: column; gap: 40px; }
+/* To make it masonry, shift right col down */
+.grid-col:nth-child(2) { margin-top: 80px; }
+
+.grid-item {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 2rem;
+  transition: transform 0.3s ease;
+}
+.grid-item-head { display: flex; align-items: flex-start; gap: 20px; margin-bottom: 2rem; }
+.grid-num { font-family: var(--font-display); font-size: 3.5rem; line-height: 0.8; font-weight: 700; color: rgba(255,255,255,0.8); }
+.card-titles h4 { font-family: var(--font-display); font-size: 1.8rem; margin-bottom: 0.2rem; }
+.card-titles p { font-family: var(--font-sans); font-size: 0.9rem; color: var(--text-secondary); }
+
+.grid-tools { color: var(--text-primary); font-size: 1rem; margin-bottom: 0.2rem; }
+.grid-desc { color: var(--text-secondary); font-size: 0.9rem; opacity: 0.8; line-height: 1.6; margin-bottom: 1.5rem; }
+
+/* The Glossy Visual Placeholder / Thumbnail */
+.thumb-wrapper {
+  overflow: hidden;
+  border-radius: 4px;
+  background: linear-gradient(135deg, rgba(20,20,20,1) 0%, rgba(5,5,5,1) 100%);
+  position: relative;
+  aspect-ratio: 16 / 9;
+  display: flex; justify-content: center; align-items: center;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.05), 0 10px 30px rgba(139, 92, 246, 0.15);
+  transition: box-shadow 0.4s ease;
+}
+.thumb-wrapper:hover { box-shadow: inset 0 0 0 1px rgba(139, 92, 246, 0.5), 0 20px 40px rgba(139, 92, 246, 0.3); }
+
+.thumb-inner {
+  font-family: var(--font-display); font-size: 1.5rem; text-align: center; color: var(--text-secondary); opacity: 0.3; letter-spacing: -0.02em; line-height: 1.2;
+}
+
+/* Base Responsive */
+@media (max-width: 1024px) {
+  .whatido-container { grid-template-columns: 1fr; }
+  .grid-container { flex-direction: column; }
+  .grid-col:nth-child(2) { margin-top: 0; }
+  .whatido-left { height: 400px; display: flex; flex-direction: column; align-items: center; }
+  .massive-vertical { position: relative; left: 0; transform: none; text-align: center; line-height: 1; }
+  .desk-image-wrapper { position: relative; width: 100%; height: auto; }
+}

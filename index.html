@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rohan Krishna | AI/ML & Full Stack Engineer</title>
+    <!-- True 1:1 Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <!-- 1. PRE-LOADER (The Wow Factor) -->
+    <div id="preloader">
+      <div class="loader-massive-wrapper">
+        <img src="/loading_orb.png" class="loader-3d-orb" alt="Loading Core" />
+        <div class="loader-number-container">
+          <span id="loader-perc" class="stagger-num">0</span><span class="loader-perc-sign">%</span>
+        </div>
+        <div class="loader-progress-bar">
+           <div class="loader-progress-fill" id="loader-fill"></div>
+        </div>
+        <div class="loader-status-text" id="loader-status">INITIALIZING...</div>
+        <div class="loader-brand-text">ROHAN KRISHNA © 2026</div>
+      </div>
+    </div>
+
+    <!-- Grain Noise SVG Overlay -->
+    <div class="noise-overlay"></div>
+    <div class="ambient-mesh"></div>
+
+    <!-- The 4 'L' corners as seen in some premium themes (Blueprint grid corners) -->
+    <div class="corner-l top-left"></div>
+    <div class="corner-l top-right"></div>
+    <div class="corner-l bottom-left"></div>
+    <div class="corner-l bottom-right"></div>
+
+    <!-- Fixed UI Overlay -->
+    <header class="fixed-nav hide-on-load">
+      <div class="logo">Rhn /&gt;</div>
+      <div class="contact-center">rayavarapurohan2006@gmail.com</div>
+      <nav class="nav-links">
+        <a href="#about">ABOUT</a>
+        <a href="#work">WORK</a>
+        <a href="#details">DETAILS</a>
+      </nav>
+    </header>
+
+    <aside class="sidebar-socials hide-on-load">
+      <a href="https://github.com/ByteWizard750" target="_blank" aria-label="Github"><svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+      <a href="https://www.linkedin.com/in/rohan-krishna-rayavarapu-05742428b/" target="_blank" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+      <a href="https://www.instagram.com/rohan_krishna_2006/" target="_blank" aria-label="Instagram"><svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+    </aside>
+
+    <a href="#" class="btn-resume hide-on-load">RESUME <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><line x1="13" y1="2" x2="21" y2="2"></line><line x1="21" y1="2" x2="21" y2="10"></line><line x1="21" y1="2" x2="10" y2="13"></line><line x1="3" y1="12" x2="3" y2="21" rx="2" ry="2"></line><line x1="3" y1="21" x2="12" y2="21"></line></svg></a>
+
+    <!-- Lenis Smooth Scroll Context -->
+    <div id="smooth-wrapper">
+      <div id="smooth-content">
+        
+        <main>
+          <!-- HERO -->
+          <section id="hero" class="hero-block">
+            <!-- Left Overlay -->
+            <div class="hero-layer-left reveal-text">
+              <span class="hero-small-text">Hello! I'm</span>
+              <h1 class="hero-massive-title staggered">
+                <span>ROHAN</span>
+                <span>KRISHNA</span>
+              </h1>
+            </div>
+
+            <!-- Absolute Center (Top z-index to overlay proper text scaling) -->
+            <div class="hero-layer-center reveal-avatar">
+              <img src="/avatar.png" alt="3D Avatar" class="the-avatar" />
+            </div>
+
+            <!-- Right Overlay -->
+            <div class="hero-layer-right reveal-text">
+              <span class="hero-small-text right-align">An</span>
+              <h2 class="hero-massive-role staggered">
+                <span class="hollow-purple">AI/ML DEV</span>
+                <span>FULL STACK</span>
+              </h2>
+            </div>
+          </section>
+
+          <!-- ABOUT: "WHAT I DO" Blueprint Layout -->
+          <section id="about" class="whatido-block">
+            <div class="whatido-container">
+              
+              <!-- Left: Giant Vertical Text + 3D Image -->
+              <div class="whatido-left">
+                <h2 class="massive-vertical outline-text">WHAT I DO</h2>
+                <div class="desk-image-wrapper">
+                  <img src="/desk_avatar.png" alt="3D Desk Setup" class="desk-image" />
+                </div>
+              </div>
+
+              <!-- Right: Blueprint Cards -->
+              <div class="whatido-right">
+                
+                <div class="blueprint-card">
+                  <div class="bp-corner tl"></div><div class="bp-corner tr"></div>
+                  <div class="bp-corner bl"></div><div class="bp-corner br"></div>
+                  <h3>AI/ML DEVELOPER</h3>
+                  <p class="bp-sub">Building intelligent computing solutions</p>
+                  <p class="bp-desc">Exploring deep-learning systems, intelligent applications, and quantum algorithms to construct scalable performance models utilizing powerful python analytics.</p>
+                </div>
+
+                <div class="blueprint-card">
+                  <div class="bp-corner tl"></div><div class="bp-corner tr"></div>
+                  <div class="bp-corner bl"></div><div class="bp-corner br"></div>
+                  <h3>FULL-STACK END-TO-END</h3>
+                  <p class="bp-sub">Responsive applications & 50K+ Query scales</p>
+                  <p class="bp-desc">Creating heavy-lifting backends with Django and FastAPI, connected flawlessly via WebSockets and real-time APIs to interactive, beautifully animated frontends.</p>
+                </div>
+
+              </div>
+            </div>
+          </section>
+
+          <!-- WORK: The Multy-Column Thumbnail Grid -->
+          <section id="work" class="work-grid-block">
+            <div class="work-header">
+              <h2 class="section-massive-title">My <span class="hollow-purple">Work</span></h2>
+            </div>
+            
+            <div class="grid-container">
+              <!-- COLUMN 1 -->
+              <div class="grid-col">
+                <article class="grid-item">
+                  <div class="grid-item-head">
+                    <span class="grid-num">01</span>
+                    <div class="grid-titles">
+                      <h4>GullySquad</h4>
+                      <p>Django / PostgreSQL</p>
+                    </div>
+                  </div>
+                  <div class="grid-tools">Tools and features</div>
+                  <div class="grid-desc">WebSockets API, Geolocation matching, JWT Security</div>
+                  <!-- Thumbnail with glowing wrapper -->
+                  <div class="thumb-wrapper">
+                    <div class="thumb-inner">GS<br/>GullySquad Engine</div>
+                  </div>
+                </article>
+
+                <article class="grid-item">
+                  <div class="grid-item-head">
+                    <span class="grid-num">03</span>
+                    <div class="grid-titles">
+                      <h4>SnapBill AI</h4>
+                      <p>Python / OpenCV</p>
+                    </div>
+                  </div>
+                  <div class="grid-tools">Tools and features</div>
+                  <div class="grid-desc">Deep Image Recognition, Automated Expense splitting, ML processing</div>
+                  <div class="thumb-wrapper">
+                    <div class="thumb-inner">SB<br/>SnapBill Vision</div>
+                  </div>
+                </article>
+                
+                <article class="grid-item">
+                  <div class="grid-item-head">
+                    <span class="grid-num">05</span>
+                    <div class="grid-titles">
+                      <h4>Intelli-Chat</h4>
+                      <p>Django / Javascript</p>
+                    </div>
+                  </div>
+                  <div class="grid-tools">Tools and features</div>
+                  <div class="grid-desc">Conversational UI, Live generic API connections, AI answering</div>
+                  <div class="thumb-wrapper">
+                    <div class="thumb-inner">IC<br/>LLM Web Bot</div>
+                  </div>
+                </article>
+              </div>
+              
+              <!-- COLUMN 2 -->
+              <div class="grid-col">
+                <article class="grid-item">
+                  <div class="grid-item-head">
+                    <span class="grid-num">02</span>
+                    <div class="grid-titles">
+                      <h4>TMuD</h4>
+                      <p>FastAPI / Django</p>
+                    </div>
+                  </div>
+                  <div class="grid-tools">Tools and features</div>
+                  <div class="grid-desc">Spotify API, Local memory Caching, Massive Request Handlers</div>
+                  <div class="thumb-wrapper">
+                    <div class="thumb-inner">TM<br/>Music Discovery</div>
+                  </div>
+                </article>
+
+                <article class="grid-item">
+                  <div class="grid-item-head">
+                    <span class="grid-num">04</span>
+                    <div class="grid-titles">
+                      <h4>Quantum Sim</h4>
+                      <p>Python / Qiskit</p>
+                    </div>
+                  </div>
+                  <div class="grid-tools">Tools and features</div>
+                  <div class="grid-desc">Circuit generation, Superposition models, Quantum Entanglement simulations</div>
+                  <div class="thumb-wrapper">
+                    <div class="thumb-inner">QS<br/>Quantum Core</div>
+                  </div>
+                </article>
+
+                <article class="grid-item">
+                  <div class="grid-item-head">
+                    <span class="grid-num">06</span>
+                    <div class="grid-titles">
+                      <h4>FinTracker</h4>
+                      <p>Full-Stack / Data</p>
+                    </div>
+                  </div>
+                  <div class="grid-tools">Tools and features</div>
+                  <div class="grid-desc">Financial Goals algorithm, D3/Chart visualizers, Django API</div>
+                  <div class="thumb-wrapper">
+                    <div class="thumb-inner">FT<br/>Finance Models</div>
+                  </div>
+                </article>
+              </div>
+
+            </div>
+          </section>
+
+          <!-- DETAILS: The list grid -->
+          <section id="details" class="details-block">
+            <div class="grid-container" style="flex-direction: column; max-width: 900px; margin: 0 auto; padding-bottom: 5rem;">
+               <div class="work-header" style="margin-bottom: 4rem;">
+                <h2 class="section-massive-title" style="font-size: 3rem;">Tech <span class="hollow-purple">Profile</span></h2>
+              </div>
+              
+              <!-- Education -->
+              <div class="blueprint-card" style="margin-bottom: 2rem;">
+                  <div class="bp-corner tl"></div><div class="bp-corner tr"></div>
+                  <div class="bp-corner bl"></div><div class="bp-corner br"></div>
+                  <h3 style="font-size: 2rem;">Vellore Institute of Technology</h3>
+                  <p class="bp-sub">B.Tech CS & Engineering (AI & ML) • CGPA: 8.7/10</p>
+                  
+                  <h3 style="font-size: 1.5rem; margin-top: 1.5rem;">Narayana Junior College</h3>
+                  <p class="bp-sub">Senior Secondary (MPC) • 97%</p>
+              </div>
+
+              <!-- Skills -->
+              <div class="blueprint-card" style="margin-bottom: 2rem;">
+                  <div class="bp-corner tl"></div><div class="bp-corner tr"></div>
+                  <div class="bp-corner bl"></div><div class="bp-corner br"></div>
+                  <h3 style="font-size: 2rem;">Technical Arsenal</h3>
+                  <p class="bp-desc" style="color:#fff; opacity:0.9; margin-top:1rem; line-height:1.8;">
+                     <strong>Languages:</strong> C/C++, Python, Java, JavaScript, SQL<br/>
+                     <strong>Web Dev:</strong> ReactJS, NextJS, Django, Node.js, HTML, CSS<br/>
+                     <strong>Data & AI:</strong> Pandas, NumPy, scikit-learn, OpenCV, Qiskit<br/>
+                     <strong>Tools:</strong> Git, Linux, Docker, PostgreSQL, MATLAB
+                  </p>
+              </div>
+
+              <!-- Certs & Experience -->
+              <div class="blueprint-card">
+                  <div class="bp-corner tl"></div><div class="bp-corner tr"></div>
+                  <div class="bp-corner bl"></div><div class="bp-corner br"></div>
+                  <h3 style="font-size: 2rem;">Certifications & Experience</h3>
+                  <p class="bp-desc" style="color:#fff; opacity:0.9; margin-top:1rem; line-height:1.8;">
+                     • AWS Certified Cloud Practitioner (2024)<br/>
+                     • Deep Learning Specialization – Coursera (2024)<br/>
+                     • NPTEL DBMS Certification (Elite + Silver) (2025)<br/>
+                     • Core Organizing Committee Member – College Fest (2025)<br/>
+                     • Active in tech communities & open source systems
+                  </p>
+              </div>
+
+            </div>
+          </section>
+
+        </main>
+      </div>
+    </div>
+    
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
