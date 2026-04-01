@@ -147,4 +147,64 @@ window.addEventListener('load', () => {
     duration: 1.5,
     ease: "power4.out"
   });
+
+  // 3D Custom Cursor Logic
+  const cursorWrapper = document.querySelector('.cursor-wrapper');
+  const cursorHoverState = document.querySelector('.cursor-hover-state');
+  const cursorOrb = document.querySelector('.cursor-3d-orb');
+  const cursorTrail = document.querySelector('.cursor-trail-track');
+
+  if (cursorWrapper && window.matchMedia("(pointer: fine)").matches) {
+    // GSAP quickTo for highly performant mouse follow without lag (inertia)
+    let xTo = gsap.quickTo(cursorWrapper, "x", {duration: 0.15, ease: "power3"});
+    let yTo = gsap.quickTo(cursorWrapper, "y", {duration: 0.15, ease: "power3"});
+    let txTo = gsap.quickTo(cursorTrail, "x", {duration: 0.6, ease: "elastic.out(1, 0.4)"});
+    let tyTo = gsap.quickTo(cursorTrail, "y", {duration: 0.6, ease: "elastic.out(1, 0.4)"});
+
+    window.addEventListener("mousemove", (e) => {
+      if (cursorWrapper.style.opacity === "0" || cursorWrapper.style.opacity === "") {
+        gsap.to(cursorWrapper, { opacity: 1, duration: 0.4 });
+        if(cursorTrail) gsap.to(cursorTrail, { opacity: 1, duration: 0.4 });
+      }
+      xTo(e.clientX - 22); // Center the 44x44 orb
+      yTo(e.clientY - 22);
+      if(cursorTrail) {
+        txTo(e.clientX - 25); // Center the 50x50 ring
+        tyTo(e.clientY - 25);
+      }
+    });
+
+    // Hover States for Interactive Elements
+    const interactables = document.querySelectorAll('a, button, input, .grid-item, .blueprint-card, .btn-resume');
+    interactables.forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        gsap.to(cursorHoverState, {
+          scale: 1.8,
+          duration: 0.4,
+          ease: "back.out(1.5)"
+        });
+        gsap.to(cursorOrb, {
+          boxShadow: "0 0 45px rgba(213, 174, 255, 1), 0 0 80px rgba(164, 93, 250, 0.6), inset -4px -4px 10px rgba(120, 50, 200, 0.3)",
+          duration: 0.4
+        });
+        if(cursorTrail) {
+          gsap.to(cursorTrail, { scale: 1.5, opacity: 0.5, duration: 0.4, ease: "back.out(1.5)" });
+        }
+      });
+      el.addEventListener('mouseleave', () => {
+        gsap.to(cursorHoverState, {
+          scale: 1,
+          duration: 0.3,
+          ease: "power2.out"
+        });
+        gsap.to(cursorOrb, {
+          boxShadow: "0 0 25px rgba(213, 174, 255, 0.7), 0 0 50px rgba(164, 93, 250, 0.4), inset -4px -4px 10px rgba(120, 50, 200, 0.3)",
+          duration: 0.3
+        });
+        if(cursorTrail) {
+          gsap.to(cursorTrail, { scale: 1, opacity: 1, duration: 0.3, ease: "power2.out" });
+        }
+      });
+    });
+  }
 });

@@ -352,8 +352,36 @@ body::after {
 }
 .thumb-wrapper:hover { box-shadow: inset 0 0 0 1px rgba(139, 92, 246, 0.5), 0 20px 40px rgba(139, 92, 246, 0.3); }
 
+.thumb-image {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s ease;
+  filter: blur(2px) opacity(0.5);
+  z-index: 1;
+}
+.thumb-wrapper:hover .thumb-image {
+  transform: scale(1.05); /* Smooth hover reveal */
+  filter: blur(0px) opacity(0.85);
+}
+
+.thumb-overlay {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: radial-gradient(circle at center, transparent 30%, rgba(0,0,0,0.6) 100%);
+  z-index: 2;
+  pointer-events: none;
+}
+
 .thumb-inner {
   font-family: var(--font-display); font-size: 1.5rem; text-align: center; color: var(--text-secondary); opacity: 0.3; letter-spacing: -0.02em; line-height: 1.2;
+  z-index: 3;
+  transition: opacity 0.4s ease, color 0.4s ease, text-shadow 0.4s ease;
+}
+.thumb-wrapper:hover .thumb-inner {
+  opacity: 1;
+  color: var(--text-primary);
+  text-shadow: 0 0 15px rgba(0,0,0,0.8);
 }
 
 /* Base Responsive */
@@ -364,4 +392,79 @@ body::after {
   .whatido-left { height: 400px; display: flex; flex-direction: column; align-items: center; }
   .massive-vertical { position: relative; left: 0; transform: none; text-align: center; line-height: 1; }
   .desk-image-wrapper { position: relative; width: 100%; height: auto; }
+}
+
+/* 9. CUSTOM 3D ORB CURSOR */
+.cursor-trail-track {
+  position: fixed;
+  top: 0; left: 0;
+  width: 50px; height: 50px;
+  pointer-events: none;
+  z-index: 99998;
+  opacity: 0;
+  mix-blend-mode: difference;
+}
+.cursor-trail-ring {
+  width: 100%; height: 100%;
+  border-radius: 50%;
+  border: 1.5px dashed rgba(213, 174, 255, 0.8);
+  box-shadow: 0 0 15px rgba(164, 93, 250, 0.4), inset 0 0 15px rgba(164, 93, 250, 0.4);
+  animation: spinTrail 4s linear infinite;
+  transform-origin: center center;
+}
+
+@keyframes spinTrail {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.cursor-wrapper {
+  position: fixed;
+  top: 0; left: 0;
+  width: 44px; height: 44px;
+  pointer-events: none;
+  z-index: 99999;
+  opacity: 0; /* hidden initially until move */
+  mix-blend-mode: difference;
+}
+
+.cursor-hover-state {
+  width: 100%;
+  height: 100%;
+  transform-origin: center center;
+}
+
+.cursor-3d-orb {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  
+  /* Trippy dynamic blend: bright core + rotating metallic slice of colors */
+  background: radial-gradient(circle at 35% 35%, #ffffff 0%, rgba(236,223,255,0.8) 40%, transparent 80%),
+              conic-gradient(from 0deg, #d5aeff 0%, #a45dfa 25%, #7832c8 50%, #a45dfa 75%, #d5aeff 100%);
+  
+  /* Outer glow simulating the soft fuzzy edge of the light */
+  box-shadow: 
+    0 0 25px rgba(213, 174, 255, 0.7),
+    0 0 50px rgba(164, 93, 250, 0.4),
+    inset -4px -4px 10px rgba(120, 50, 200, 0.3);
+    
+  /* Breathing animation + slow reverse spin for the cosmic effect */
+  animation: orbBreathe 4s ease-in-out infinite, spinTrail 8s linear infinite reverse;
+}
+
+@keyframes orbBreathe {
+  0%, 100% { transform: scale(1); filter: brightness(1); }
+  50% { transform: scale(1.08); filter: brightness(1.15); }
+}
+
+/* Base cursor hide */
+@media (hover: hover) and (pointer: fine) {
+  body, a, button, input, .grid-item, .blueprint-card { cursor: none !important; }
+}
+
+/* Hide custom cursor on mobile */
+@media (hover: none) or (pointer: coarse) {
+  .cursor-wrapper { display: none !important; }
+  body, a, button, input, .grid-item, .blueprint-card { cursor: auto !important; }
 }
