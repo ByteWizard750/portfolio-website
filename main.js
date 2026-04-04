@@ -152,26 +152,18 @@ window.addEventListener('load', () => {
   const cursorWrapper = document.querySelector('.cursor-wrapper');
   const cursorHoverState = document.querySelector('.cursor-hover-state');
   const cursorOrb = document.querySelector('.cursor-3d-orb');
-  const cursorTrail = document.querySelector('.cursor-trail-track');
 
   if (cursorWrapper && window.matchMedia("(pointer: fine)").matches) {
     // GSAP quickTo for highly performant mouse follow without lag (inertia)
     let xTo = gsap.quickTo(cursorWrapper, "x", {duration: 0.15, ease: "power3"});
     let yTo = gsap.quickTo(cursorWrapper, "y", {duration: 0.15, ease: "power3"});
-    let txTo = gsap.quickTo(cursorTrail, "x", {duration: 0.6, ease: "elastic.out(1, 0.4)"});
-    let tyTo = gsap.quickTo(cursorTrail, "y", {duration: 0.6, ease: "elastic.out(1, 0.4)"});
 
     window.addEventListener("mousemove", (e) => {
       if (cursorWrapper.style.opacity === "0" || cursorWrapper.style.opacity === "") {
         gsap.to(cursorWrapper, { opacity: 1, duration: 0.4 });
-        if(cursorTrail) gsap.to(cursorTrail, { opacity: 1, duration: 0.4 });
       }
       xTo(e.clientX - 22); // Center the 44x44 orb
       yTo(e.clientY - 22);
-      if(cursorTrail) {
-        txTo(e.clientX - 25); // Center the 50x50 ring
-        tyTo(e.clientY - 25);
-      }
     });
 
     // Hover States for Interactive Elements
@@ -187,9 +179,6 @@ window.addEventListener('load', () => {
           boxShadow: "0 0 45px rgba(213, 174, 255, 1), 0 0 80px rgba(164, 93, 250, 0.6), inset -4px -4px 10px rgba(120, 50, 200, 0.3)",
           duration: 0.4
         });
-        if(cursorTrail) {
-          gsap.to(cursorTrail, { scale: 1.5, opacity: 0.5, duration: 0.4, ease: "back.out(1.5)" });
-        }
       });
       el.addEventListener('mouseleave', () => {
         gsap.to(cursorHoverState, {
@@ -201,10 +190,51 @@ window.addEventListener('load', () => {
           boxShadow: "0 0 25px rgba(213, 174, 255, 0.7), 0 0 50px rgba(164, 93, 250, 0.4), inset -4px -4px 10px rgba(120, 50, 200, 0.3)",
           duration: 0.3
         });
-        if(cursorTrail) {
-          gsap.to(cursorTrail, { scale: 1, opacity: 1, duration: 0.3, ease: "power2.out" });
-        }
       });
     });
   }
+
+  // Premium Interactions: Magnetic Hover Physics
+  const magnets = document.querySelectorAll('.nav-links a, .sidebar-socials a, .btn-resume');
+  magnets.forEach((magnet) => {
+    magnet.addEventListener('mousemove', (e) => {
+      const bound = magnet.getBoundingClientRect();
+      // Calculate delta from center of element, scale down for a nice "tethered" feel
+      const x = (e.clientX - bound.left - bound.width / 2) * 0.4;
+      const y = (e.clientY - bound.top - bound.height / 2) * 0.4;
+      gsap.to(magnet, { x: x, y: y, duration: 0.8, ease: "power3.out", overwrite: "auto" });
+    });
+    magnet.addEventListener('mouseleave', () => {
+      // Elastic snap-back
+      gsap.to(magnet, { x: 0, y: 0, duration: 0.8, ease: "elastic.out(1, 0.3)", overwrite: "auto" });
+    });
+  });
+
+  // Premium Interactions: Thumbnail Image Parallax
+  const thumbs = gsap.utils.toArray('.thumb-wrapper');
+  thumbs.forEach((wrapper) => {
+    const img = wrapper.querySelector('.thumb-image');
+    if (img) {
+      // Bind vertical shift to scroll progression (Parallax)
+      gsap.to(img, {
+        yPercent: 30, // Pull it down relative to scroll
+        ease: "none",
+        scrollTrigger: {
+          trigger: wrapper,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: 1
+        }
+      });
+      
+      // Handle JS hover scale so it doesn't conflict with parallax inline matrices
+      wrapper.addEventListener('mouseenter', () => {
+        gsap.to(img, { scale: 1.05, duration: 0.6, ease: "power2.out", overwrite: "auto" });
+      });
+      wrapper.addEventListener('mouseleave', () => {
+        gsap.to(img, { scale: 1, duration: 0.6, ease: "power2.out", overwrite: "auto" });
+      });
+    }
+  });
+
 });

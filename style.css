@@ -354,15 +354,14 @@ body::after {
 
 .thumb-image {
   position: absolute;
-  top: 0; left: 0; width: 100%; height: 100%;
+  top: -15%; left: 0; width: 100%; height: 130%;
   object-fit: cover;
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s ease;
-  filter: blur(2px) opacity(0.5);
+  transition: filter 0.6s ease;
+  filter: brightness(0.65); /* Sharp and visible but slightly dark to allow text to pop */
   z-index: 1;
 }
 .thumb-wrapper:hover .thumb-image {
-  transform: scale(1.05); /* Smooth hover reveal */
-  filter: blur(0px) opacity(0.85);
+  filter: brightness(1);
 }
 
 .thumb-overlay {
@@ -394,30 +393,24 @@ body::after {
   .desk-image-wrapper { position: relative; width: 100%; height: auto; }
 }
 
+@media (max-width: 768px) {
+  .contact-center { display: none; }
+  .fixed-nav { left: 20px; right: 20px; top: 20px; }
+  .nav-links { gap: 1.5rem; }
+  
+  .sidebar-socials {
+    top: auto;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%) !important;
+    flex-direction: row;
+    gap: 2rem;
+  }
+  
+  .btn-resume { display: none; }
+}
+
 /* 9. CUSTOM 3D ORB CURSOR */
-.cursor-trail-track {
-  position: fixed;
-  top: 0; left: 0;
-  width: 50px; height: 50px;
-  pointer-events: none;
-  z-index: 99998;
-  opacity: 0;
-  mix-blend-mode: difference;
-}
-.cursor-trail-ring {
-  width: 100%; height: 100%;
-  border-radius: 50%;
-  border: 1.5px dashed rgba(213, 174, 255, 0.8);
-  box-shadow: 0 0 15px rgba(164, 93, 250, 0.4), inset 0 0 15px rgba(164, 93, 250, 0.4);
-  animation: spinTrail 4s linear infinite;
-  transform-origin: center center;
-}
-
-@keyframes spinTrail {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
 .cursor-wrapper {
   position: fixed;
   top: 0; left: 0;
@@ -425,7 +418,6 @@ body::after {
   pointer-events: none;
   z-index: 99999;
   opacity: 0; /* hidden initially until move */
-  mix-blend-mode: difference;
 }
 
 .cursor-hover-state {
@@ -439,9 +431,8 @@ body::after {
   height: 100%;
   border-radius: 50%;
   
-  /* Trippy dynamic blend: bright core + rotating metallic slice of colors */
-  background: radial-gradient(circle at 35% 35%, #ffffff 0%, rgba(236,223,255,0.8) 40%, transparent 80%),
-              conic-gradient(from 0deg, #d5aeff 0%, #a45dfa 25%, #7832c8 50%, #a45dfa 75%, #d5aeff 100%);
+  /* Soft glowing pale lavender/pink sphere like the reference image */
+  background: radial-gradient(circle at 35% 35%, #ffffff 0%, #ecdfff 30%, #d5aeff 70%, #a45dfa 100%);
   
   /* Outer glow simulating the soft fuzzy edge of the light */
   box-shadow: 
@@ -449,8 +440,8 @@ body::after {
     0 0 50px rgba(164, 93, 250, 0.4),
     inset -4px -4px 10px rgba(120, 50, 200, 0.3);
     
-  /* Breathing animation + slow reverse spin for the cosmic effect */
-  animation: orbBreathe 4s ease-in-out infinite, spinTrail 8s linear infinite reverse;
+  /* Breathing animation */
+  animation: orbBreathe 4s ease-in-out infinite;
 }
 
 @keyframes orbBreathe {
