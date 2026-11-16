@@ -70,6 +70,11 @@
         </nav>
         <div class="mobile-nav-footer">
           <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" class="mobile-resume-btn">DOWNLOAD RESUME ↗</a>
+          <div class="mobile-drawer-socials">
+            <a href="https://github.com/ByteWizard750" target="_blank" rel="noopener noreferrer" aria-label="Github"><svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+            <a href="https://www.linkedin.com/in/rohan-krishna-rayavarapu-05742428b/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+            <a href="https://www.instagram.com/rohan_krishna_2006/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+          </div>
         </div>
       </div>
     </div>
@@ -165,8 +170,6 @@
             </div>
             
             <div class="grid-container" id="featured-grid">
-              <!-- COLUMN 1 -->
-              <div class="grid-col">
                 <!-- 01 RepoMind AI -->
                 <article class="grid-item" data-project-id="repomind-ai" data-category="agentic-ai ai-ml">
                   <div class="grid-item-head">
@@ -188,6 +191,33 @@
                   </div>
                   <div class="thumb-wrapper">
                     <img class="thumb-image" src="./repomind_ui.jpg" alt="RepoMind AI Architecture Graph UI" />
+                    <div class="thumb-overlay"></div>
+                  </div>
+                </article>
+
+                <!-- 02 VeriAI -->
+                <article class="grid-item" data-project-id="veriai" data-category="ai-ml full-stack">
+                  <div class="grid-item-head">
+                    <span class="grid-num">02</span>
+                    <div class="grid-titles">
+                      <h4>VeriAI</h4>
+                      <p>Real-Time Fact Verification & XAI</p>
+                    </div>
+                  </div>
+                  <div class="tech-pills">
+                    <span class="tech-pill">Python 3.13</span>
+                    <span class="tech-pill">Flask</span>
+                    <span class="tech-pill">NLP</span>
+                    <span class="tech-pill">DeBERTa-v3</span>
+                    <span class="tech-pill">SHAP</span>
+                    <span class="tech-pill">Live Web Search</span>
+                  </div>
+                  <div class="grid-desc">Fact-checking platform mitigating linguistic shortcuts through SHAP explainability attribution and real-time multi-source web evidence retrieval.</div>
+                  <div class="grid-item-footer">
+                    <span class="btn-view-details">Inspect Spec & Architecture →</span>
+                  </div>
+                  <div class="thumb-wrapper">
+                    <img class="thumb-image" src="./veriai_ui.jpg" alt="VeriAI Fact Verification UI" />
                     <div class="thumb-overlay"></div>
                   </div>
                 </article>
@@ -215,87 +245,6 @@
                   </div>
                   <div class="thumb-wrapper">
                     <img class="thumb-image" src="./vitcarpool_ui.jpg" alt="VIT Carpool Geospatial UI" />
-                    <div class="thumb-overlay"></div>
-                  </div>
-                </article>
-                
-                <!-- 05 SupportFlow AI -->
-                <article class="grid-item" data-project-id="supportflow-ai" data-category="generative-ai ai-ml">
-                  <div class="grid-item-head">
-                    <span class="grid-num">05</span>
-                    <div class="grid-titles">
-                      <h4>SupportFlow AI</h4>
-                      <p>RAG Ticket Intelligence Assistant</p>
-                    </div>
-                  </div>
-                  <div class="tech-pills">
-                    <span class="tech-pill">Python</span>
-                    <span class="tech-pill">Google Gemini</span>
-                    <span class="tech-pill">FAISS</span>
-                    <span class="tech-pill">Sentence Transformers</span>
-                    <span class="tech-pill">Streamlit</span>
-                  </div>
-                  <div class="grid-desc">Support ticket intelligence using RAG vector search, structured classification (sentiment, priority), and SLA escalation tracking.</div>
-                  <div class="grid-item-footer">
-                    <span class="btn-view-details">Inspect Spec & Architecture →</span>
-                  </div>
-                  <div class="thumb-wrapper">
-                    <img class="thumb-image" src="./supportflow_ui.jpg" alt="SupportFlow AI Assistant UI" />
-                    <div class="thumb-overlay"></div>
-                  </div>
-                </article>
-
-                <!-- 07 TMuD -->
-                <article class="grid-item" data-project-id="tmud" data-category="full-stack">
-                  <div class="grid-item-head">
-                    <span class="grid-num">07</span>
-                    <div class="grid-titles">
-                      <h4>TMuD</h4>
-                      <p>Spotify Media Portal & Community</p>
-                    </div>
-                  </div>
-                  <div class="tech-pills">
-                    <span class="tech-pill">Python</span>
-                    <span class="tech-pill">Django REST Framework</span>
-                    <span class="tech-pill">Spotify API</span>
-                    <span class="tech-pill">JavaScript</span>
-                  </div>
-                  <div class="grid-desc">Music discovery platform with Spotify integration, persistent cross-page audio streaming, community ratings (1-10), and leaderboard.</div>
-                  <div class="grid-item-footer">
-                    <span class="btn-view-details">Inspect Spec & Architecture →</span>
-                  </div>
-                  <div class="thumb-wrapper">
-                    <img class="thumb-image" src="./tmud_ui.jpg" alt="TMuD Music Discovery UI" />
-                    <div class="thumb-overlay"></div>
-                  </div>
-                </article>
-              </div>
-              
-              <!-- COLUMN 2 -->
-              <div class="grid-col">
-                <!-- 02 VeriAI -->
-                <article class="grid-item" data-project-id="veriai" data-category="ai-ml full-stack">
-                  <div class="grid-item-head">
-                    <span class="grid-num">02</span>
-                    <div class="grid-titles">
-                      <h4>VeriAI</h4>
-                      <p>Real-Time Fact Verification & XAI</p>
-                    </div>
-                  </div>
-                  <div class="tech-pills">
-                    <span class="tech-pill">Python 3.13</span>
-                    <span class="tech-pill">Flask</span>
-                    <span class="tech-pill">NLP</span>
-                    <span class="tech-pill">DeBERTa-v3</span>
-                    <span class="tech-pill">SHAP</span>
-                    <span class="tech-pill">Live Web Search</span>
-                  </div>
-                  <div class="grid-desc">Fact-checking platform mitigating linguistic shortcuts through SHAP explainability attribution and real-time multi-source web evidence retrieval.</div>
-                  <div class="grid-item-footer">
-                    <span class="btn-view-details">Inspect Spec & Architecture →</span>
-                  </div>
-                  <div class="thumb-wrapper">
-                    <img class="thumb-image" src="./veriai_ui.jpg" alt="VeriAI Fact Verification UI" />
                     <div class="thumb-overlay"></div>
                   </div>
                 </article>
@@ -327,6 +276,32 @@
                   </div>
                 </article>
 
+                <!-- 05 SupportFlow AI -->
+                <article class="grid-item" data-project-id="supportflow-ai" data-category="generative-ai ai-ml">
+                  <div class="grid-item-head">
+                    <span class="grid-num">05</span>
+                    <div class="grid-titles">
+                      <h4>SupportFlow AI</h4>
+                      <p>RAG Ticket Intelligence Assistant</p>
+                    </div>
+                  </div>
+                  <div class="tech-pills">
+                    <span class="tech-pill">Python</span>
+                    <span class="tech-pill">Google Gemini</span>
+                    <span class="tech-pill">FAISS</span>
+                    <span class="tech-pill">Sentence Transformers</span>
+                    <span class="tech-pill">Streamlit</span>
+                  </div>
+                  <div class="grid-desc">Support ticket intelligence using RAG vector search, structured classification (sentiment, priority), and SLA escalation tracking.</div>
+                  <div class="grid-item-footer">
+                    <span class="btn-view-details">Inspect Spec & Architecture →</span>
+                  </div>
+                  <div class="thumb-wrapper">
+                    <img class="thumb-image" src="./supportflow_ui.jpg" alt="SupportFlow AI Assistant UI" />
+                    <div class="thumb-overlay"></div>
+                  </div>
+                </article>
+
                 <!-- 06 IntelliScale -->
                 <article class="grid-item" data-project-id="intelliscale" data-category="ai-ml systems-automation">
                   <div class="grid-item-head">
@@ -348,6 +323,31 @@
                   </div>
                   <div class="thumb-wrapper">
                     <img class="thumb-image" src="./intelliscale_ui.jpg" alt="IntelliScale RL Resource Allocator UI" />
+                    <div class="thumb-overlay"></div>
+                  </div>
+                </article>
+
+                <!-- 07 TMuD -->
+                <article class="grid-item" data-project-id="tmud" data-category="full-stack">
+                  <div class="grid-item-head">
+                    <span class="grid-num">07</span>
+                    <div class="grid-titles">
+                      <h4>TMuD</h4>
+                      <p>Spotify Media Portal & Community</p>
+                    </div>
+                  </div>
+                  <div class="tech-pills">
+                    <span class="tech-pill">Python</span>
+                    <span class="tech-pill">Django REST Framework</span>
+                    <span class="tech-pill">Spotify API</span>
+                    <span class="tech-pill">JavaScript</span>
+                  </div>
+                  <div class="grid-desc">Music discovery platform with Spotify integration, persistent cross-page audio streaming, community ratings (1-10), and leaderboard.</div>
+                  <div class="grid-item-footer">
+                    <span class="btn-view-details">Inspect Spec & Architecture →</span>
+                  </div>
+                  <div class="thumb-wrapper">
+                    <img class="thumb-image" src="./tmud_ui.jpg" alt="TMuD Music Discovery UI" />
                     <div class="thumb-overlay"></div>
                   </div>
                 </article>
@@ -377,7 +377,6 @@
                     <div class="thumb-overlay"></div>
                   </div>
                 </article>
-              </div>
             </div>
 
             <!-- Expandable Additional Project Explorer -->
@@ -631,8 +630,8 @@
 
           <!-- DETAILS: The list grid -->
           <section id="details" class="details-block">
-            <div class="grid-container" style="flex-direction: column; max-width: 900px; margin: 0 auto; padding-bottom: 5rem;">
-               <div class="work-header" style="margin-bottom: 4rem;">
+            <div class="grid-container" style="flex-direction: column; max-width: 900px; margin: 0 auto;">
+               <div class="work-header" style="margin-bottom: 3rem;">
                 <h2 class="section-massive-title" style="font-size: 3rem;">Tech <span class="hollow-purple">Profile</span></h2>
               </div>
               
@@ -640,10 +639,10 @@
               <div class="blueprint-card" style="margin-bottom: 2rem;">
                   <div class="bp-corner tl"></div><div class="bp-corner tr"></div>
                   <div class="bp-corner bl"></div><div class="bp-corner br"></div>
-                  <h3 style="font-size: 2rem;">Vellore Institute of Technology, Chennai</h3>
+                  <h3 class="details-card-title">Vellore Institute of Technology, Chennai</h3>
                   <p class="bp-sub">B.Tech in Computer Science and Engineering (AI & ML) • CGPA: 8.15</p>
                   
-                  <h3 style="font-size: 1.5rem; margin-top: 1.5rem;">Narayana Junior College</h3>
+                  <h3 class="details-card-title" style="margin-top: 1.5rem; font-size: 1.35rem;">Narayana Junior College</h3>
                   <p class="bp-sub">Senior Secondary (MPC) • 95.3%</p>
               </div>
 
@@ -651,7 +650,7 @@
               <div class="blueprint-card" style="margin-bottom: 2rem;">
                   <div class="bp-corner tl"></div><div class="bp-corner tr"></div>
                   <div class="bp-corner bl"></div><div class="bp-corner br"></div>
-                  <h3 style="font-size: 2rem;">Technical Arsenal</h3>
+                  <h3 class="details-card-title">Technical Arsenal</h3>
                   <p class="bp-desc" style="color:#fff; opacity:0.9; margin-top:1rem; line-height:1.8;">
                      <strong>Languages:</strong> Python, SQL, Java, TypeScript, C/C++<br/>
                      <strong>Data Science & ML:</strong> PyTorch, Scikit-learn, XGBoost, LightGBM, SHAP, DeBERTa, Pandas, NumPy<br/>
@@ -664,7 +663,7 @@
               <div class="blueprint-card">
                   <div class="bp-corner tl"></div><div class="bp-corner tr"></div>
                   <div class="bp-corner bl"></div><div class="bp-corner br"></div>
-                  <h3 style="font-size: 2rem;">Certifications & Activities</h3>
+                  <h3 class="details-card-title">Certifications & Activities</h3>
                   <p class="bp-desc" style="color:#fff; opacity:0.9; margin-top:1rem; line-height:1.8;">
                      • Machine Learning with Python including AI<br/>
                      • NPTEL DBMS Certification (Elite + Silver)<br/>
@@ -676,6 +675,28 @@
 
             </div>
           </section>
+
+          <!-- Sleek Site Footer -->
+          <footer class="site-footer">
+            <div class="footer-inner">
+              <div class="footer-brand">
+                <span class="footer-logo">Rhn /&gt;</span>
+                <p class="footer-tagline">Architecting intelligent computing systems & high-performance applications.</p>
+              </div>
+              <div class="footer-links">
+                <a href="mailto:rayavarapurohan2006@gmail.com" class="footer-email">rayavarapurohan2006@gmail.com</a>
+                <div class="footer-socials">
+                  <a href="https://github.com/ByteWizard750" target="_blank" rel="noopener noreferrer" aria-label="GitHub">GitHub</a>
+                  <a href="https://www.linkedin.com/in/rohan-krishna-rayavarapu-05742428b/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LinkedIn</a>
+                  <a href="https://www.instagram.com/rohan_krishna_2006/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">Instagram</a>
+                </div>
+              </div>
+            </div>
+            <div class="footer-bottom">
+              <span>© 2026 Rohan Krishna. All rights reserved.</span>
+              <a href="#hero" class="back-to-top">Back to top ↑</a>
+            </div>
+          </footer>
 
         </main>
       </div>
