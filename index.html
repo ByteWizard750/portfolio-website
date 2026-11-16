@@ -39,21 +39,48 @@
     <!-- Fixed UI Overlay -->
     <header class="fixed-nav hide-on-load">
       <div class="logo">Rhn /&gt;</div>
-      <div class="contact-center">rayavarapurohan2006@gmail.com</div>
+      <a href="mailto:rayavarapurohan2006@gmail.com" class="contact-center">rayavarapurohan2006@gmail.com</a>
       <nav class="nav-links">
         <a href="#about">ABOUT</a>
         <a href="#work">WORK</a>
+        <a href="#experience">EXPERIENCE</a>
+        <a href="#github">GITHUB</a>
         <a href="#details">DETAILS</a>
       </nav>
+      <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle navigation menu">
+        <span class="bar top-bar"></span>
+        <span class="bar bot-bar"></span>
+      </button>
     </header>
 
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-nav-drawer" id="mobile-nav-drawer" aria-hidden="true">
+      <div class="mobile-nav-backdrop" id="mobile-nav-backdrop"></div>
+      <div class="mobile-nav-content blueprint-card">
+        <div class="bp-corner tl"></div><div class="bp-corner tr"></div>
+        <div class="bp-corner bl"></div><div class="bp-corner br"></div>
+        <button class="mobile-nav-close" id="mobile-nav-close" aria-label="Close navigation">✕</button>
+        <div class="mobile-nav-header">NAVIGATION</div>
+        <nav class="mobile-nav-links">
+          <a href="#about" class="mobile-nav-item"><span>01</span> ABOUT</a>
+          <a href="#work" class="mobile-nav-item"><span>02</span> WORK</a>
+          <a href="#experience" class="mobile-nav-item"><span>03</span> EXPERIENCE</a>
+          <a href="#github" class="mobile-nav-item"><span>04</span> GITHUB</a>
+          <a href="#details" class="mobile-nav-item"><span>05</span> DETAILS</a>
+        </nav>
+        <div class="mobile-nav-footer">
+          <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" class="mobile-resume-btn">DOWNLOAD RESUME ↗</a>
+        </div>
+      </div>
+    </div>
+
     <aside class="sidebar-socials hide-on-load">
-      <a href="https://github.com/ByteWizard750" target="_blank" aria-label="Github"><svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
-      <a href="https://www.linkedin.com/in/rohan-krishna-rayavarapu-05742428b/" target="_blank" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
-      <a href="https://www.instagram.com/rohan_krishna_2006/" target="_blank" aria-label="Instagram"><svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+      <a href="https://github.com/ByteWizard750" target="_blank" rel="noopener noreferrer" aria-label="Github"><svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+      <a href="https://www.linkedin.com/in/rohan-krishna-rayavarapu-05742428b/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+      <a href="https://www.instagram.com/rohan_krishna_2006/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
     </aside>
 
-    <a href="#" class="btn-resume hide-on-load">RESUME <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><line x1="13" y1="2" x2="21" y2="2"></line><line x1="21" y1="2" x2="21" y2="10"></line><line x1="21" y1="2" x2="10" y2="13"></line><line x1="3" y1="12" x2="3" y2="21" rx="2" ry="2"></line><line x1="3" y1="21" x2="12" y2="21"></line></svg></a>
+    <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" class="btn-resume hide-on-load">RESUME <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><line x1="13" y1="2" x2="21" y2="2"></line><line x1="21" y1="2" x2="21" y2="10"></line><line x1="21" y1="2" x2="10" y2="13"></line><line x1="3" y1="12" x2="3" y2="21" rx="2" ry="2"></line><line x1="3" y1="21" x2="12" y2="21"></line></svg></a>
 
     <!-- Lenis Smooth Scroll Context -->
     <div id="smooth-wrapper">
@@ -124,119 +151,481 @@
           <!-- WORK: The Multy-Column Thumbnail Grid -->
           <section id="work" class="work-grid-block">
             <div class="work-header">
-              <h2 class="section-massive-title">My <span class="hollow-purple">Work</span></h2>
+              <h2 class="section-massive-title">Featured <span class="hollow-purple">Projects</span></h2>
+            </div>
+
+            <!-- Project Category Filters -->
+            <div class="filter-container">
+              <button class="filter-btn active" data-filter="all">All Projects</button>
+              <button class="filter-btn" data-filter="agentic-ai">Agentic AI</button>
+              <button class="filter-btn" data-filter="ai-ml">AI / Machine Learning</button>
+              <button class="filter-btn" data-filter="generative-ai">Generative AI</button>
+              <button class="filter-btn" data-filter="full-stack">Full Stack Development</button>
+              <button class="filter-btn" data-filter="systems-automation">Systems & Automation</button>
             </div>
             
-            <div class="grid-container">
+            <div class="grid-container" id="featured-grid">
               <!-- COLUMN 1 -->
               <div class="grid-col">
-                <article class="grid-item">
+                <!-- 01 RepoMind AI -->
+                <article class="grid-item" data-project-id="repomind-ai" data-category="agentic-ai ai-ml">
                   <div class="grid-item-head">
                     <span class="grid-num">01</span>
                     <div class="grid-titles">
-                      <h4>GullySquad</h4>
-                      <p>Django / PostgreSQL</p>
+                      <h4>RepoMind AI</h4>
+                      <p>Agentic Intelligence & Architecture Drift</p>
                     </div>
                   </div>
-                  <div class="grid-tools">Tools and features</div>
-                  <div class="grid-desc">WebSockets API, Geolocation matching, JWT Security</div>
-                  <!-- Thumbnail with glowing wrapper -->
+                  <div class="tech-pills">
+                    <span class="tech-pill">Python</span>
+                    <span class="tech-pill">LangGraph</span>
+                    <span class="tech-pill">Neo4j</span>
+                    <span class="tech-pill">Tree-sitter AST</span>
+                  </div>
+                  <div class="grid-desc">Temporal knowledge graphs from Git history & ASTs to detect architectural drift, reconstruct ADRs, and automate code reviews.</div>
+                  <div class="grid-item-footer">
+                    <span class="btn-view-details">Inspect Spec & Architecture →</span>
+                  </div>
                   <div class="thumb-wrapper">
-                    <img class="thumb-image" src="./gs_ui.png" alt="GullySquad Engine UI" />
+                    <img class="thumb-image" src="./repomind_ui.jpg" alt="RepoMind AI Architecture Graph UI" />
                     <div class="thumb-overlay"></div>
-                    
                   </div>
                 </article>
 
-                <article class="grid-item">
+                <!-- 03 VIT Carpool -->
+                <article class="grid-item" data-project-id="vit-carpool" data-category="full-stack systems-automation">
                   <div class="grid-item-head">
                     <span class="grid-num">03</span>
                     <div class="grid-titles">
-                      <h4>SnapBill AI</h4>
-                      <p>Python / OpenCV</p>
+                      <h4>VIT Carpool</h4>
+                      <p>Campus Carpooling & Cab Sharing</p>
                     </div>
                   </div>
-                  <div class="grid-tools">Tools and features</div>
-                  <div class="grid-desc">Deep Image Recognition, Automated Expense splitting, ML processing</div>
+                  <div class="tech-pills">
+                    <span class="tech-pill">TypeScript</span>
+                    <span class="tech-pill">NestJS</span>
+                    <span class="tech-pill">React 19</span>
+                    <span class="tech-pill">PostgreSQL / PostGIS</span>
+                    <span class="tech-pill">Redis</span>
+                    <span class="tech-pill">Socket.io</span>
+                  </div>
+                  <div class="grid-desc">Campus-exclusive carpooling platform featuring PostGIS geospatial radius matching, live WebSockets notifications, and JWT authentication.</div>
+                  <div class="grid-item-footer">
+                    <span class="btn-view-details">Inspect Spec & Architecture →</span>
+                  </div>
                   <div class="thumb-wrapper">
-                    <img class="thumb-image" src="./sb_ui.png" alt="SnapBill AI Vision UI" />
+                    <img class="thumb-image" src="./vitcarpool_ui.jpg" alt="VIT Carpool Geospatial UI" />
                     <div class="thumb-overlay"></div>
-                   
                   </div>
                 </article>
                 
-                <article class="grid-item">
+                <!-- 05 SupportFlow AI -->
+                <article class="grid-item" data-project-id="supportflow-ai" data-category="generative-ai ai-ml">
                   <div class="grid-item-head">
                     <span class="grid-num">05</span>
                     <div class="grid-titles">
-                      <h4>Intelli-Chat</h4>
-                      <p>Django / Javascript</p>
+                      <h4>SupportFlow AI</h4>
+                      <p>RAG Ticket Intelligence Assistant</p>
                     </div>
                   </div>
-                  <div class="grid-tools">Tools and features</div>
-                  <div class="grid-desc">Conversational UI, Live generic API connections, AI answering</div>
+                  <div class="tech-pills">
+                    <span class="tech-pill">Python</span>
+                    <span class="tech-pill">Google Gemini</span>
+                    <span class="tech-pill">FAISS</span>
+                    <span class="tech-pill">Sentence Transformers</span>
+                    <span class="tech-pill">Streamlit</span>
+                  </div>
+                  <div class="grid-desc">Support ticket intelligence using RAG vector search, structured classification (sentiment, priority), and SLA escalation tracking.</div>
+                  <div class="grid-item-footer">
+                    <span class="btn-view-details">Inspect Spec & Architecture →</span>
+                  </div>
                   <div class="thumb-wrapper">
-                    <img class="thumb-image" src="./ic_ui.png" alt="Intelli-Chat LLM Web Bot UI" />
+                    <img class="thumb-image" src="./supportflow_ui.jpg" alt="SupportFlow AI Assistant UI" />
                     <div class="thumb-overlay"></div>
-                  
+                  </div>
+                </article>
+
+                <!-- 07 TMuD -->
+                <article class="grid-item" data-project-id="tmud" data-category="full-stack">
+                  <div class="grid-item-head">
+                    <span class="grid-num">07</span>
+                    <div class="grid-titles">
+                      <h4>TMuD</h4>
+                      <p>Spotify Media Portal & Community</p>
+                    </div>
+                  </div>
+                  <div class="tech-pills">
+                    <span class="tech-pill">Python</span>
+                    <span class="tech-pill">Django REST Framework</span>
+                    <span class="tech-pill">Spotify API</span>
+                    <span class="tech-pill">JavaScript</span>
+                  </div>
+                  <div class="grid-desc">Music discovery platform with Spotify integration, persistent cross-page audio streaming, community ratings (1-10), and leaderboard.</div>
+                  <div class="grid-item-footer">
+                    <span class="btn-view-details">Inspect Spec & Architecture →</span>
+                  </div>
+                  <div class="thumb-wrapper">
+                    <img class="thumb-image" src="./tmud_ui.jpg" alt="TMuD Music Discovery UI" />
+                    <div class="thumb-overlay"></div>
                   </div>
                 </article>
               </div>
               
               <!-- COLUMN 2 -->
               <div class="grid-col">
-                <article class="grid-item">
+                <!-- 02 VeriAI -->
+                <article class="grid-item" data-project-id="veriai" data-category="ai-ml full-stack">
                   <div class="grid-item-head">
                     <span class="grid-num">02</span>
                     <div class="grid-titles">
-                      <h4>TMuD</h4>
-                      <p>FastAPI / Django</p>
+                      <h4>VeriAI</h4>
+                      <p>Real-Time Fact Verification & XAI</p>
                     </div>
                   </div>
-                  <div class="grid-tools">Tools and features</div>
-                  <div class="grid-desc">Spotify API, Local memory Caching, Massive Request Handlers</div>
+                  <div class="tech-pills">
+                    <span class="tech-pill">Python 3.13</span>
+                    <span class="tech-pill">Flask</span>
+                    <span class="tech-pill">NLP</span>
+                    <span class="tech-pill">DeBERTa-v3</span>
+                    <span class="tech-pill">SHAP</span>
+                    <span class="tech-pill">Live Web Search</span>
+                  </div>
+                  <div class="grid-desc">Fact-checking platform mitigating linguistic shortcuts through SHAP explainability attribution and real-time multi-source web evidence retrieval.</div>
+                  <div class="grid-item-footer">
+                    <span class="btn-view-details">Inspect Spec & Architecture →</span>
+                  </div>
                   <div class="thumb-wrapper">
-                    <img class="thumb-image" src="./tmud_ui.png" alt="TMuD Music Discovery UI" />
+                    <img class="thumb-image" src="./veriai_ui.jpg" alt="VeriAI Fact Verification UI" />
                     <div class="thumb-overlay"></div>
-                    
                   </div>
                 </article>
 
-                <article class="grid-item">
+                <!-- 04 ads-agent -->
+                <article class="grid-item" data-project-id="ads-agent" data-category="agentic-ai generative-ai systems-automation">
                   <div class="grid-item-head">
                     <span class="grid-num">04</span>
                     <div class="grid-titles">
-                      <h4>Quantum Sim</h4>
-                      <p>Python / Qiskit</p>
+                      <h4>ads-agent</h4>
+                      <p>Multi-Agent Marketing Automation</p>
                     </div>
                   </div>
-                  <div class="grid-tools">Tools and features</div>
-                  <div class="grid-desc">Circuit generation, Superposition models, Quantum Entanglement simulations</div>
+                  <div class="tech-pills">
+                    <span class="tech-pill">Python</span>
+                    <span class="tech-pill">LangGraph</span>
+                    <span class="tech-pill">Hermes</span>
+                    <span class="tech-pill">Apify</span>
+                    <span class="tech-pill">OpenRouter</span>
+                    <span class="tech-pill">Supabase</span>
+                  </div>
+                  <div class="grid-desc">Multi-agent marketing automation engine for competitor ad research, marketing angle extraction, script generation, and programmatic video rendering.</div>
+                  <div class="grid-item-footer">
+                    <span class="btn-view-details">Inspect Spec & Architecture →</span>
+                  </div>
                   <div class="thumb-wrapper">
-                    <img class="thumb-image" src="./qc_ui.png" alt="Quantum Sim Quantum Core UI" />
+                    <img class="thumb-image" src="./adsagent_ui.jpg" alt="ads-agent Multi-Agent UI" />
                     <div class="thumb-overlay"></div>
-                   
                   </div>
                 </article>
 
-                <article class="grid-item">
+                <!-- 06 IntelliScale -->
+                <article class="grid-item" data-project-id="intelliscale" data-category="ai-ml systems-automation">
                   <div class="grid-item-head">
                     <span class="grid-num">06</span>
                     <div class="grid-titles">
-                      <h4>FinTracker</h4>
-                      <p>Full-Stack / Data</p>
+                      <h4>IntelliScale</h4>
+                      <p>RL Cloud Resource Optimization</p>
                     </div>
                   </div>
-                  <div class="grid-tools">Tools and features</div>
-                  <div class="grid-desc">Financial Goals algorithm, D3/Chart visualizers, Django API</div>
+                  <div class="tech-pills">
+                    <span class="tech-pill">Python</span>
+                    <span class="tech-pill">PyTorch</span>
+                    <span class="tech-pill">Gymnasium</span>
+                    <span class="tech-pill">Streamlit</span>
+                  </div>
+                  <div class="grid-desc">Dynamic cloud resource allocator using Reinforcement Learning (Q-Learning, DQN) with realistic VM boot delay simulation and live telemetry.</div>
+                  <div class="grid-item-footer">
+                    <span class="btn-view-details">Inspect Spec & Architecture →</span>
+                  </div>
                   <div class="thumb-wrapper">
-                    <img class="thumb-image" src="./ft_ui.png" alt="FinTracker Finance Models UI" />
+                    <img class="thumb-image" src="./intelliscale_ui.jpg" alt="IntelliScale RL Resource Allocator UI" />
                     <div class="thumb-overlay"></div>
-                    
+                  </div>
+                </article>
+
+                <!-- 08 Binance Futures Trading Bot -->
+                <article class="grid-item" data-project-id="binance-bot" data-category="systems-automation">
+                  <div class="grid-item-head">
+                    <span class="grid-num">08</span>
+                    <div class="grid-titles">
+                      <h4>Binance Trading Bot</h4>
+                      <p>Algorithmic Execution & Risk Controls</p>
+                    </div>
+                  </div>
+                  <div class="tech-pills">
+                    <span class="tech-pill">Python</span>
+                    <span class="tech-pill">Binance Futures API</span>
+                    <span class="tech-pill">HMAC-SHA256</span>
+                    <span class="tech-pill">Algorithmic Trading</span>
+                    <span class="tech-pill">CLI</span>
+                  </div>
+                  <div class="grid-desc">Modular USDT-M futures trading bot with sub-second MARKET/LIMIT/STOP order execution, exchange lot/tick validation, and structured audit logs.</div>
+                  <div class="grid-item-footer">
+                    <span class="btn-view-details">Inspect Spec & Architecture →</span>
+                  </div>
+                  <div class="thumb-wrapper">
+                    <img class="thumb-image" src="./binancebot_ui.jpg" alt="Binance Trading Bot Terminal UI" />
+                    <div class="thumb-overlay"></div>
                   </div>
                 </article>
               </div>
+            </div>
 
+            <!-- Expandable Additional Project Explorer -->
+            <div class="explorer-section">
+              <div class="explorer-toggle-wrapper">
+                <button id="toggle-explorer-btn" class="explorer-toggle-btn">
+                  <span class="explorer-toggle-text">More Experiments & Projects (10)</span>
+                  <span class="explorer-toggle-arrow">↓</span>
+                </button>
+              </div>
+              <div id="explorer-content" class="explorer-content collapsed">
+                <div class="explorer-grid">
+                  
+                  <a href="https://github.com/ByteWizard750/gully-squad" target="_blank" rel="noopener noreferrer" class="explorer-card">
+                    <div class="explorer-card-head">
+                      <span class="explorer-card-title">GullySquad</span>
+                      <span class="explorer-card-link-icon">↗</span>
+                    </div>
+                    <p class="explorer-card-desc">Hyperlocal sports community platform with player matching, squad coordination, and match scorekeeping.</p>
+                    <div class="explorer-card-tech">
+                      <span class="tech-pill">Python</span>
+                      <span class="tech-pill">Django REST Framework</span>
+                      <span class="tech-pill">SQLite</span>
+                    </div>
+                  </a>
+
+                  <a href="https://github.com/ByteWizard750/SnapBill" target="_blank" rel="noopener noreferrer" class="explorer-card">
+                    <div class="explorer-card-head">
+                      <span class="explorer-card-title">SnapBill</span>
+                      <span class="explorer-card-link-icon">↗</span>
+                    </div>
+                    <p class="explorer-card-desc">Smart receipt scanner that extracts items and prices via pytesseract OCR and splits bills among groups.</p>
+                    <div class="explorer-card-tech">
+                      <span class="tech-pill">Python</span>
+                      <span class="tech-pill">Django</span>
+                      <span class="tech-pill">pytesseract OCR</span>
+                      <span class="tech-pill">JavaScript</span>
+                    </div>
+                  </a>
+
+                  <a href="https://github.com/ByteWizard750/password-breach-detector" target="_blank" rel="noopener noreferrer" class="explorer-card">
+                    <div class="explorer-card-head">
+                      <span class="explorer-card-title">Password Breach Detector</span>
+                      <span class="explorer-card-link-icon">↗</span>
+                    </div>
+                    <p class="explorer-card-desc">Security app checking passwords against data breaches using Have I Been Pwned API with k-anonymity and Celery tasks.</p>
+                    <div class="explorer-card-tech">
+                      <span class="tech-pill">Python</span>
+                      <span class="tech-pill">Django</span>
+                      <span class="tech-pill">Celery</span>
+                      <span class="tech-pill">Redis</span>
+                    </div>
+                  </a>
+
+                  <a href="https://github.com/ByteWizard750/leaddesk-mini" target="_blank" rel="noopener noreferrer" class="explorer-card">
+                    <div class="explorer-card-head">
+                      <span class="explorer-card-title">LeadDesk Mini</span>
+                      <span class="explorer-card-link-icon">↗</span>
+                    </div>
+                    <p class="explorer-card-desc">Full-stack B2B lead capture product featuring validated intake forms and an authenticated pipeline management dashboard.</p>
+                    <div class="explorer-card-tech">
+                      <span class="tech-pill">TypeScript</span>
+                      <span class="tech-pill">Next.js 14</span>
+                      <span class="tech-pill">Prisma</span>
+                      <span class="tech-pill">PostgreSQL</span>
+                      <span class="tech-pill">NextAuth</span>
+                    </div>
+                  </a>
+
+                  <a href="https://github.com/ByteWizard750/Visusecure_Color" target="_blank" rel="noopener noreferrer" class="explorer-card">
+                    <div class="explorer-card-head">
+                      <span class="explorer-card-title">Visusecure Color</span>
+                      <span class="explorer-card-link-icon">↗</span>
+                    </div>
+                    <p class="explorer-card-desc">Visual computer vision monitoring system leveraging real-time color segmentation and anomaly tracking in camera feeds.</p>
+                    <div class="explorer-card-tech">
+                      <span class="tech-pill">Python</span>
+                      <span class="tech-pill">OpenCV</span>
+                      <span class="tech-pill">Computer Vision</span>
+                    </div>
+                  </a>
+
+                  <a href="https://github.com/ByteWizard750/poseAura" target="_blank" rel="noopener noreferrer" class="explorer-card">
+                    <div class="explorer-card-head">
+                      <span class="explorer-card-title">PoseAura</span>
+                      <span class="explorer-card-link-icon">↗</span>
+                    </div>
+                    <p class="explorer-card-desc">Real-time webcam human pose tracking, skeletal estimation, and motion aura visualization running in browser.</p>
+                    <div class="explorer-card-tech">
+                      <span class="tech-pill">JavaScript</span>
+                      <span class="tech-pill">p5.js</span>
+                      <span class="tech-pill">ml5.js</span>
+                    </div>
+                  </a>
+
+                  <a href="https://github.com/ByteWizard750/personal-finance-tracker" target="_blank" rel="noopener noreferrer" class="explorer-card">
+                    <div class="explorer-card-head">
+                      <span class="explorer-card-title">Personal Finance Tracker</span>
+                      <span class="explorer-card-link-icon">↗</span>
+                    </div>
+                    <p class="explorer-card-desc">Client-side personal financial dashboard with multi-currency tracking, budget planning, and interactive Chart.js reports.</p>
+                    <div class="explorer-card-tech">
+                      <span class="tech-pill">JavaScript</span>
+                      <span class="tech-pill">HTML5/CSS3</span>
+                      <span class="tech-pill">Chart.js</span>
+                    </div>
+                  </a>
+
+                  <a href="https://github.com/ByteWizard750/movie-recommender" target="_blank" rel="noopener noreferrer" class="explorer-card">
+                    <div class="explorer-card-head">
+                      <span class="explorer-card-title">Movie Recommender</span>
+                      <span class="explorer-card-link-icon">↗</span>
+                    </div>
+                    <p class="explorer-card-desc">Content-based movie recommendation system with cosine similarity ranking and dynamic poster rendering.</p>
+                    <div class="explorer-card-tech">
+                      <span class="tech-pill">Python</span>
+                      <span class="tech-pill">Gradio</span>
+                      <span class="tech-pill">Scikit-learn</span>
+                      <span class="tech-pill">Pandas</span>
+                    </div>
+                  </a>
+
+                  <a href="https://github.com/ByteWizard750/accredian-clone" target="_blank" rel="noopener noreferrer" class="explorer-card">
+                    <div class="explorer-card-head">
+                      <span class="explorer-card-title">Accredian Enterprise Clone</span>
+                      <span class="explorer-card-link-icon">↗</span>
+                    </div>
+                    <p class="explorer-card-desc">Responsive executive landing page recreation built with modern typography, Framer Motion, and API route handlers.</p>
+                    <div class="explorer-card-tech">
+                      <span class="tech-pill">TypeScript</span>
+                      <span class="tech-pill">Next.js 15</span>
+                      <span class="tech-pill">Tailwind CSS</span>
+                      <span class="tech-pill">Framer Motion</span>
+                    </div>
+                  </a>
+
+                  <a href="https://github.com/ByteWizard750/Mini-Ekart-Testing" target="_blank" rel="noopener noreferrer" class="explorer-card">
+                    <div class="explorer-card-head">
+                      <span class="explorer-card-title">Mini-Ekart BDD Testing</span>
+                      <span class="explorer-card-link-icon">↗</span>
+                    </div>
+                    <p class="explorer-card-desc">Automated end-to-end testing project for web cart operations using Selenium browser automation and Cucumber (Behave).</p>
+                    <div class="explorer-card-tech">
+                      <span class="tech-pill">Python</span>
+                      <span class="tech-pill">Selenium</span>
+                      <span class="tech-pill">Cucumber / Behave</span>
+                    </div>
+                  </a>
+
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- EXPERIENCE: Professional Experience Section -->
+          <section id="experience" class="experience-block">
+            <div class="work-header">
+              <h2 class="section-massive-title">Work <span class="hollow-purple">Experience</span></h2>
+            </div>
+            <div class="experience-container">
+              <div class="blueprint-card exp-card">
+                <div class="bp-corner tl"></div><div class="bp-corner tr"></div>
+                <div class="bp-corner bl"></div><div class="bp-corner br"></div>
+                <div class="exp-badge">INTERNSHIP</div>
+                <div class="exp-header">
+                  <div>
+                    <h3 class="exp-role">AI Engineer Intern</h3>
+                    <p class="exp-company">Perartral Technologies India Pvt. Ltd.</p>
+                  </div>
+                  <span class="exp-duration">May 2026 – Aug 2026</span>
+                </div>
+                <p class="bp-desc exp-desc">
+                  Contributed to an Enterprise Warehouse Management System (WMS) covering inventory management, warehouse operations, and operational dashboards. Developed backend workflows and APIs for WMS features alongside senior engineers in a Git-based environment. Researched AI-driven enterprise automation across warehouse management, payroll, employee tracking, and business intelligence (BI).
+                </p>
+                <div class="exp-tags">
+                  <span class="tech-pill">Enterprise WMS</span>
+                  <span class="tech-pill">AI Automation</span>
+                  <span class="tech-pill">Backend Workflows & APIs</span>
+                  <span class="tech-pill">Python</span>
+                  <span class="tech-pill">Git</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- GITHUB: Activity & Profile -->
+          <section id="github" class="github-block">
+            <div class="work-header">
+              <h2 class="section-massive-title">GitHub <span class="hollow-purple">Activity</span></h2>
+            </div>
+            <div class="github-container">
+              <div class="blueprint-card github-card">
+                <div class="bp-corner tl"></div><div class="bp-corner tr"></div>
+                <div class="bp-corner bl"></div><div class="bp-corner br"></div>
+                
+                <div class="github-top">
+                  <div class="github-user-info">
+                    <svg viewBox="0 0 24 24" width="36" height="36" stroke="currentColor" stroke-width="2" fill="none" class="gh-icon"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                    <div>
+                      <h3>ByteWizard750</h3>
+                      <p class="bp-sub" style="margin-bottom:0;">Public Repositories & Engineering Highlights</p>
+                    </div>
+                  </div>
+                  <a href="https://github.com/ByteWizard750" target="_blank" rel="noopener noreferrer" class="btn-github-profile">
+                    Visit GitHub Profile ↗
+                  </a>
+                </div>
+
+                <div class="github-metrics-row">
+                  <div class="metric-box">
+                    <span class="metric-num">22</span>
+                    <span class="metric-lbl">Public Repositories</span>
+                  </div>
+                  <div class="metric-box">
+                    <span class="metric-num">8</span>
+                    <span class="metric-lbl">Featured Systems</span>
+                  </div>
+                  <div class="metric-box">
+                    <span class="metric-num">100%</span>
+                    <span class="metric-lbl">Open Source Verification</span>
+                  </div>
+                </div>
+
+                <div class="github-highlights-title">Selected Repository Highlights</div>
+                <div class="github-repos-grid">
+                  <a href="https://github.com/ByteWizard750/RepoMind-AI" target="_blank" rel="noopener noreferrer" class="gh-repo-item">
+                    <div class="gh-repo-name">ByteWizard750 / RepoMind-AI ↗</div>
+                    <div class="gh-repo-desc">Temporal knowledge graphs from Git history & ASTs for architecture drift detection.</div>
+                    <div class="gh-repo-tech"><span>Python</span><span>LangGraph</span><span>Neo4j</span></div>
+                  </a>
+                  <a href="https://github.com/ByteWizard750/VeriAI-Fact-Checker" target="_blank" rel="noopener noreferrer" class="gh-repo-item">
+                    <div class="gh-repo-name">ByteWizard750 / VeriAI-Fact-Checker ↗</div>
+                    <div class="gh-repo-desc">Real-time fact verification with DeBERTa, SHAP explainability, and live web search.</div>
+                    <div class="gh-repo-tech"><span>Python</span><span>Flask</span><span>SHAP</span></div>
+                  </a>
+                  <a href="https://github.com/ByteWizard750/vit-carpool" target="_blank" rel="noopener noreferrer" class="gh-repo-item">
+                    <div class="gh-repo-name">ByteWizard750 / vit-carpool ↗</div>
+                    <div class="gh-repo-desc">Campus carpooling and cab sharing with PostGIS geospatial routing & WebSockets.</div>
+                    <div class="gh-repo-tech"><span>TypeScript</span><span>NestJS</span><span>PostGIS</span></div>
+                  </a>
+                  <a href="https://github.com/ByteWizard750/SupportFlow-AI" target="_blank" rel="noopener noreferrer" class="gh-repo-item">
+                    <div class="gh-repo-name">ByteWizard750 / SupportFlow-AI ↗</div>
+                    <div class="gh-repo-desc">AI support ticket intelligence assistant with FAISS vector RAG and Gemini.</div>
+                    <div class="gh-repo-tech"><span>Python</span><span>Gemini</span><span>FAISS</span></div>
+                  </a>
+                </div>
+
+              </div>
             </div>
           </section>
 
@@ -251,11 +640,11 @@
               <div class="blueprint-card" style="margin-bottom: 2rem;">
                   <div class="bp-corner tl"></div><div class="bp-corner tr"></div>
                   <div class="bp-corner bl"></div><div class="bp-corner br"></div>
-                  <h3 style="font-size: 2rem;">Vellore Institute of Technology</h3>
-                  <p class="bp-sub">B.Tech CS & Engineering (AI & ML) • CGPA: 8.7/10</p>
+                  <h3 style="font-size: 2rem;">Vellore Institute of Technology, Chennai</h3>
+                  <p class="bp-sub">B.Tech in Computer Science and Engineering (AI & ML) • CGPA: 8.15</p>
                   
                   <h3 style="font-size: 1.5rem; margin-top: 1.5rem;">Narayana Junior College</h3>
-                  <p class="bp-sub">Senior Secondary (MPC) • 97%</p>
+                  <p class="bp-sub">Senior Secondary (MPC) • 95.3%</p>
               </div>
 
               <!-- Skills -->
@@ -264,10 +653,10 @@
                   <div class="bp-corner bl"></div><div class="bp-corner br"></div>
                   <h3 style="font-size: 2rem;">Technical Arsenal</h3>
                   <p class="bp-desc" style="color:#fff; opacity:0.9; margin-top:1rem; line-height:1.8;">
-                     <strong>Languages:</strong> C/C++, Python, Java, JavaScript, SQL<br/>
-                     <strong>Web Dev:</strong> ReactJS, NextJS, Django, Node.js, HTML, CSS<br/>
-                     <strong>Data & AI:</strong> Pandas, NumPy, scikit-learn, OpenCV, Qiskit<br/>
-                     <strong>Tools:</strong> Git, Linux, Docker, PostgreSQL, MATLAB
+                     <strong>Languages:</strong> Python, SQL, Java, TypeScript, C/C++<br/>
+                     <strong>Data Science & ML:</strong> PyTorch, Scikit-learn, XGBoost, LightGBM, SHAP, DeBERTa, Pandas, NumPy<br/>
+                     <strong>AI & Architectures:</strong> Deep Learning, NLP, Feature Engineering, Reinforcement Learning, LLMs, RAG, LangGraph<br/>
+                     <strong>Databases & Cloud:</strong> PostgreSQL, PostGIS, Neo4j, SQLite, Redis, FastAPI, NestJS, Docker, AWS (EC2, RDS, S3, CloudFront), Git
                   </p>
               </div>
 
@@ -275,13 +664,13 @@
               <div class="blueprint-card">
                   <div class="bp-corner tl"></div><div class="bp-corner tr"></div>
                   <div class="bp-corner bl"></div><div class="bp-corner br"></div>
-                  <h3 style="font-size: 2rem;">Certifications & Experience</h3>
+                  <h3 style="font-size: 2rem;">Certifications & Activities</h3>
                   <p class="bp-desc" style="color:#fff; opacity:0.9; margin-top:1rem; line-height:1.8;">
-                     • AWS Certified Cloud Practitioner (2024)<br/>
-                     • Deep Learning Specialization – Coursera (2024)<br/>
-                     • NPTEL DBMS Certification (Elite + Silver) (2025)<br/>
-                     • Core Organizing Committee Member – College Fest (2025)<br/>
-                     • Active in tech communities & open source systems
+                     • Machine Learning with Python including AI<br/>
+                     • NPTEL DBMS Certification (Elite + Silver)<br/>
+                     • Core Java Certification<br/>
+                     • Organizing Committee Member – College Fest (2025): coordinated logistics across venues<br/>
+                     • Active Open Source Contributor & Systems Builder
                   </p>
               </div>
 
@@ -289,6 +678,80 @@
           </section>
 
         </main>
+      </div>
+    </div>
+
+    <!-- Project Detail Modal Experience -->
+    <div id="project-modal" class="project-modal" aria-hidden="true" role="dialog" aria-modal="true" data-lenis-prevent="true">
+      <div class="modal-backdrop" id="modal-backdrop"></div>
+      <div class="modal-window blueprint-card" data-lenis-prevent="true">
+        <div class="bp-corner tl"></div><div class="bp-corner tr"></div>
+        <div class="bp-corner bl"></div><div class="bp-corner br"></div>
+        
+        <!-- Sticky Modal Top Bar -->
+        <div class="modal-top-bar">
+          <div class="modal-top-meta">
+            <span class="modal-num" id="modal-project-num">01</span>
+            <div class="modal-title-wrap">
+              <h3 id="modal-project-title" class="modal-title">RepoMind AI</h3>
+              <div id="modal-project-tags" class="modal-tags"></div>
+            </div>
+          </div>
+          <button class="modal-close-btn" id="modal-close-btn" aria-label="Close modal" title="Close (ESC)">✕</button>
+        </div>
+
+        <!-- Independent Native Scroll Body -->
+        <div class="modal-scroll-body" id="modal-scroll-body" data-lenis-prevent="true">
+          <div class="modal-content-grid">
+            
+            <div class="modal-section-card">
+              <div class="modal-sec-header">
+                <span class="sec-badge">01</span>
+                <h4>Problem Statement</h4>
+              </div>
+              <p id="modal-problem" class="modal-text"></p>
+            </div>
+
+            <div class="modal-section-card">
+              <div class="modal-sec-header">
+                <span class="sec-badge">02</span>
+                <h4>Architecture & Overview</h4>
+              </div>
+              <p id="modal-overview" class="modal-text"></p>
+            </div>
+
+            <div class="modal-section-card">
+              <div class="modal-sec-header">
+                <span class="sec-badge">03</span>
+                <h4>Key Engineering Capabilities</h4>
+              </div>
+              <ul id="modal-features" class="modal-bullet-list"></ul>
+            </div>
+
+            <div class="modal-section-card">
+              <div class="modal-sec-header">
+                <span class="sec-badge">04</span>
+                <h4>Technical Implementation & Dataflow</h4>
+              </div>
+              <p id="modal-tech-impl" class="modal-text"></p>
+            </div>
+
+            <div class="modal-section-card">
+              <div class="modal-sec-header">
+                <span class="sec-badge">05</span>
+                <h4>Technology Stack</h4>
+              </div>
+              <div id="modal-tech-stack" class="modal-stack-pills"></div>
+            </div>
+
+          </div>
+
+          <div class="modal-actions">
+            <a id="modal-github-link" href="#" target="_blank" rel="noopener noreferrer" class="btn-modal-primary">
+              View on GitHub <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
     <!-- Custom 3D Cursor -->
