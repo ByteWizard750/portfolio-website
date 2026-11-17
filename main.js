@@ -31,10 +31,11 @@ window.scrollTo(0, 0);
 document.body.style.overflow = "hidden"; // physically disable the scrollbar
 
 // Preloader Logic
-window.addEventListener('load', () => {
+function initPreloader() {
   let perc = { val: 0 };
   const percText = document.getElementById("loader-perc");
   const statusEl = document.getElementById("loader-status");
+  if (!percText) return;
   
   // Rapid fire technical statuses
   const statuses = [
@@ -60,7 +61,7 @@ window.addEventListener('load', () => {
   // Fake loading animation
   gsap.to(perc, {
     val: 100,
-    duration: 3, // 3 second load hold for immersion
+    duration: 1.8, // Snappy technical load sequence
     ease: "power2.inOut",
     onUpdate: () => {
       // pad with 0 if under 10
@@ -73,29 +74,39 @@ window.addEventListener('load', () => {
       const tl = gsap.timeline();
       
       // Snuff out the loader massive wrapper
-      tl.to(".loader-massive-wrapper", { scale: 0.9, opacity: 0, duration: 0.4, ease: "power2.out" })
+      tl.to(".loader-massive-wrapper", { scale: 0.9, opacity: 0, duration: 0.3, ease: "power2.out" })
         .to("#preloader", {
           opacity: 0,
-          duration: 0.8,
+          duration: 0.6,
           ease: "power3.inOut",
           onComplete: () => {
-            document.getElementById("preloader").style.display = "none";
+            const preEl = document.getElementById("preloader");
+            if (preEl) preEl.style.display = "none";
             window.scrollTo(0, 0); // Final alignment lock
             document.body.style.overflow = ""; // restore scrollbar
             lenis.start(); // re-enable lenis smooth scroll
           }
-        }, "+=0.2")
+        }, "+=0.1")
 
-        // Trigger Main Hero Sequence
-        .from(".hide-on-load, .corner-l", { opacity: 0, duration: 1.5, ease: "power2.out" }, "-=0.4")
-        .from(".reveal-avatar", { y: -50, scale: 0.95, opacity: 0, duration: 1.5, ease: "power4.out" }, "-=1")
-        .from(".ambient-mesh", { scale: 0.5, opacity: 0, duration: 2, ease: "power3.out" }, "-=1.5")
-        .from(".hero-small-text", { opacity: 0, x: -20, duration: 1, stagger: 0.1 }, "-=1")
-        .from(".staggered span", {
-          y: 80, opacity: 0, rotation: 2, duration: 1.2, stagger: 0.15, ease: "power4.out"
-        }, "-=0.8");
+        // Trigger Main Hero Sequence with reliable fromTo
+        .fromTo(".hide-on-load, .corner-l", { opacity: 0 }, { opacity: 1, duration: 0.8, ease: "power2.out" }, "-=0.3")
+        .fromTo(".reveal-avatar", { y: -40, scale: 0.95, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 1, ease: "power4.out" }, "-=0.6")
+        .fromTo(".ambient-mesh", { scale: 0.5, opacity: 0 }, { scale: 1, opacity: 1, duration: 1.2, ease: "power3.out" }, "-=0.8")
+        .fromTo(".hero-small-text", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.8, stagger: 0.08 }, "-=0.6")
+        .fromTo(".staggered span", {
+          y: 60, opacity: 0, rotation: 2
+        }, {
+          y: 0, opacity: 1, rotation: 0, duration: 0.9, stagger: 0.1, ease: "power4.out"
+        }, "-=0.6");
     }
   });
+}
+
+if (document.readyState === 'complete') {
+  initPreloader();
+} else {
+  window.addEventListener('load', initPreloader);
+}
 
   // Parallax the ambient glow orb for depth
   gsap.to(".ambient-mesh", {
@@ -630,5 +641,3 @@ window.addEventListener('load', () => {
       });
     }
   });
-
-});
